@@ -2,12 +2,12 @@ const express = require('express');
 const app = express();
 
 app.use('/users', (request, response, next) => {
-    console.log('/users endpoint callled successfully');
+    console.log(`Hello! I'm learning Express.js!`);
     response.send({ success: true, message: null});
 });
 
 app.use('/', (request, response, next) => {
-    console.log('/ endpoint called successfuly');
+    console.log(`ExpressJS is really fun!`);
     response.send({ success: true, message: null });
 });
 
