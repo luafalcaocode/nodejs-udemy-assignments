@@ -7,7 +7,7 @@ app.use('/users', (request, response, next) => {
 });
 
 app.use('/', (request, response, next) => {
-    console.log(`ExpressJS is really fun!`);
+    console.log(`Express.js is really fun!`);
     response.send({ success: true, message: null });
 });
 
