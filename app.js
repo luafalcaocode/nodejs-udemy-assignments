@@ -1,15 +1,17 @@
 const express = require('express');
 const app = express();
+const path = require('path');
+
+
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/users', (request, response, next) => {
-    console.log(`Hello! I'm learning Express.js!`);
-    response.send({ success: true, message: null});
+    response.sendFile(path.join(__dirname, 'views', 'users.html'));
 });
 
 app.use('/', (request, response, next) => {
-    console.log(`Express.js is really fun!`);
-    response.send({ success: true, message: null });
+    response.sendFile(path.join(__dirname, 'views', 'home.html'));
 });
 
-
-app.listen(3000);
+  
+app.listen(3000); 

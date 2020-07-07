@@ -1,0 +1,1 @@
+window.alert(`Welcome to Node.js course!, ${new Date().toLocaleString('pt-BR')}`);
