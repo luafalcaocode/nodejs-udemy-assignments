@@ -32,6 +32,10 @@ li:hover {
     font-size: 14px;
 }
 
+li.item-list {
+    display: block;
+}
+
 a:link, a:visited, a:active, a:focus {
     color: none;
     text-decoration: none;

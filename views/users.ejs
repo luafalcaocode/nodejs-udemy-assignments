@@ -8,8 +8,12 @@
 
 
 
-    <% if (user && user.username) {  %>
-        <p><%= user.username %></p>
+    <% if (users.length > 0) {  %>
+       <ul>
+            <% for (const user of  users) { %>
+                <li class="item-list"><%= user.name %></li>
+            <% } %>
+        </ul>
     <% } else { %>
         <h1>No users</h1>
     <% } %>
