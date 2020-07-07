@@ -1,0 +1,19 @@
+<%- include('layout/begin.ejs') %>
+
+<main>
+    <h1>Users</h1>
+    <p>Welcome to the user page</p>
+
+    <strong>Current User: </strong>
+
+
+
+    <% if (user && user.username) {  %>
+        <p><%= user.username %></p>
+    <% } else { %>
+        <h1>No users</h1>
+    <% } %>
+</main>
+
+
+<%- include('layout/end.ejs') %>

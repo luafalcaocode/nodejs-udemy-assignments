@@ -1,15 +1,24 @@
 const express = require('express');
 const router = express.Router();
 const path = require('path');
+const { listenerCount } = require('cluster');
 
-
-router.get('/users', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views', 'users.html'));
-});
+let username = '';
 
 router.get('/', (request, response, next) => {
-    response.sendFile(path.join(__dirname, '..', 'views', 'home.html'));
+    response.render('home', { pageTitle: 'Home Page'});
 });
+
+router.post('/users', (request, response, next) => {
+    username = request.body;
+    response.redirect('/users');
+});
+
+router.get('/users', (request, response, next) => {
+    response.render('users', { pageTitle: 'Users', user: username });
+});
+
+
 
 
 
